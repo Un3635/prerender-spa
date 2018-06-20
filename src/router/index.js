@@ -1,28 +1,25 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import HelloWorld from '@/components/HelloWorld';
-import About from '@/components/about';
-import I from '@/components/i';
 
 Vue.use(Router);
 
 export default new Router({
-  mode: 'history',
+  mode: 'history', // Hash不会带到服务器，路由信息会丢失
   routes: [
     {
       path: '/',
       name: 'HelloWorld',
-      component: HelloWorld
+      component: () => import('@/components/HelloWorld')
     },
     {
       path: '/about',
       name: 'about',
-      component: About
+      component: () => import('@/components/about')
     },
     {
       path: '/i',
       name: 'i',
-      component: I
+      component: () => import('@/components/i')
     }
   ]
 });
