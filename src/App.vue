@@ -6,7 +6,18 @@
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+  metaInfo: {
+    title: '首页',
+    meta: [{
+      name: 'keywords',
+      content: '测试app.vue'
+    }],
+    link: [{
+      rel: 'asstes',
+      href: 'https://assets-cdn.github.com/'
+    }]
+  }
 };
 </script>
 
